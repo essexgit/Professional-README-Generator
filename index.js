@@ -1,7 +1,7 @@
 const fs = require("fs");
-// const path = require('path');
+const path = require('path');
 const inquirer = require("inquirer");
-// const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // Array of objects containing type, name and question
 const questions = [
@@ -28,12 +28,6 @@ const questions = [
             // Regex mail check (return true if valid mail)
             return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
         }
-    },
-    {
-        type: "confirm",
-        name: "toc",
-        message: "Would you like a table of contents?",
-        default: true
     },
     {
         type: "input",
@@ -63,24 +57,12 @@ const questions = [
         filter(val) {
             return val;
         },
-
-
     },
     {
         type: "input",
         name: "contribution",
         message: "Who else has contributed and what did they do?"
     },
-    // {
-    //     type: "input",
-    //     name: "fileName",
-    //     message: "Would you like the title 'ReadMe.md'? or would you like a different file name?"
-    // },
-    // {
-    //     type: "input",
-    //     name: "fileConflict",
-    //     message: "A readme file already exists in this directory, would you like to create a new directory, overwrite the existing file or cancel the operation?"
-    // }
 ];
 
 // function to write README file
@@ -93,10 +75,12 @@ function writeToFile(fileName = "ReadMe.md", text) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions).then((answers) => {
-        // generateMarkdown(answers);
-        const text = (Object.values(answers)).toString();
+        const markedDown = generateMarkdown(answers);
+        const text = (Object.values(markedDown)).join("");
         console.log(text);
-        writeToFile("ReadMe.md", text);
+        // let current = path.resolve();
+        // fs.mkdir(`${current}/output`);
+        writeToFile(`README.md`, text);
     });
 }
 init();
