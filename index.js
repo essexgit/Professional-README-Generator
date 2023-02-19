@@ -78,9 +78,11 @@ function init() {
         const markedDown = generateMarkdown(answers);
         const text = (Object.values(markedDown)).join("");
         console.log(text);
-        // let current = path.resolve();
-        // fs.mkdir(`${current}/output`);
-        writeToFile(`README.md`, text);
+        let current = path.resolve();
+        fs.mkdir(`./generated`, { recursive: true }, (err) => {
+            if (err) throw err;
+        });
+        writeToFile(`./generated/README.md`, text);
     });
 }
 init();
