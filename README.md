@@ -1,18 +1,8 @@
-# Module 11 Challenge: Professional README Generator
-
-## Your Task
+# Professional README Generator
 
 When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions—this last part increases the likelihood that other developers will contribute to the success of the project. 
 
-You can quickly and easily create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
-
-Your task is to create a command-line application that dynamically generates a professional README.md file from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). Review the [Good README Guide](../../01-HTML-Git-CSS/04-Important/Good-README-Guide/README.md) as a reminder of everything that a high-quality, professional README should contain. 
- 
-The application will be invoked by using the following command:
-
-```bash
-node index.js
-```
+You can quickly and easily create a README file by using this command-line application, incorporating an npm package called Inquirer to generate one. This allows the project creator to devote more time to working on the project.
 
 ## User Story
 
@@ -39,53 +29,29 @@ node index.js
     * When a user enters their email address then this is added to the section of the README entitled Questions, with instructions on how to reach them with additional questions
     * When a user clicks on the links in the **Table of Contents** then they are taken to the corresponding section of the README
 
-## Getting Started
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Table of Contents
 
-Here are some guidelines to help you get started:
+  [Description](#When%20creating%20an%20open%20source%20project%20on%20GitHub,%20it’s%20important%20to%20have%20a%20high-quality%20README%20for%20the%20app.%20This%20should%20include%20what%20the%20app%20is%20for,%20how%20to%20use%20the%20app,%20how%20to%20install%20it,%20how%20to%20report%20issues,%20and%20how%20to%20make%20contributions—this%20last%20part%20increases%20the%20likelihood%20that%20other%20developers%20will%20contribute%20to%20the%20success%20of%20the%20project.%20)
 
-* Create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Be sure to create your `.gitignore` file before installing any npm dependencies.
+  [Contact](#@essexgit)
 
-* Make sure that your repo includes a `package.json` with the required dependencies. You can create one by running `npm init` when you first set up the project, before installing any dependencies.
+  ## How to:
 
-## Grading Requirements
+  - [Install](#node%20install)
 
-This Challenge is graded based on the following criteria: 
+  - [Run](#node%20index.js)
 
-### Deliverables: 20%
+  - [Operate](#Answer%20the%20questions%20-%20fix%20any%20errors%20later)
 
-* A sample README generated using the application must be submitted.
+  - [Licence](#MIT)
 
-* Your GitHub repository containing your application code.
-
-### Technical Acceptance Criteria: 55%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-	* Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
-
-### Repository Quality: 25%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality README with description and a link to walkthrough video.
-
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video demonstrating the functionality of the application.
-
-* A sample README.md file for a project repository generated using your application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+  - [Contributions](#Inquirer%20@%20mpnjs)
+## Description: When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions—this last part increases the likelihood that other developers will contribute to the success of the project. 
+## Github Username: @essexgit
+### Email Address: ralphsmail@btinternet.com
+### How to install: node install
+### How to start: node index.js
+### How to use: Answer the questions - fix any errors later
+### Licence: MIT
+### Notable contributions: Inquirer @ mpnjs
