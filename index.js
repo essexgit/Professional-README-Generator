@@ -75,10 +75,12 @@ function writeToFile(fileName = "ReadMe.md", text) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions).then((answers) => {
+        // import markdown generator function and send inputted answers
         const markedDown = generateMarkdown(answers);
         const text = (Object.values(markedDown)).join("");
         console.log(text);
         let current = path.resolve();
+        // create directory to output file
         fs.mkdir(`./generated`, { recursive: true }, (err) => {
             if (err) throw err;
         });

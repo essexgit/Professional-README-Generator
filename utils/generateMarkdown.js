@@ -1,7 +1,7 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
   const line1 = `# Title: ${data.title}\n`;
-  // const licenceBadge = `[![Licence: ${data.licence}](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n`;
+  // fill spaces in section titles necessary for links (accommodating future changes)
   const linkDescription = data.description.replaceAll(" ", "%20");
   const linkGit = data.github.replaceAll(" ", "%20");
   const linkInstall = data.installCmd.replaceAll(" ", "%20");
@@ -9,6 +9,7 @@ function generateMarkdown(data) {
   const linkOperate = data.operate.replaceAll(" ", "%20");
   const linkLicence = data.licence.replaceAll(" ", "%20");
   const linkContribution = data.contribution.replaceAll(" ", "%20");
+  // object containing license options as keys and linked badges as values
   const licenceBadges = {
     "Creative Commons Attribution 4.0": "[![License: CC BY 4.0](https://img.shields.io/badge/License-CC-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)",
     "Creative Commons Attribution Share Alike 4.0": "[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)",
@@ -34,6 +35,7 @@ function generateMarkdown(data) {
     "The Unlicense": "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)",
     "zLib License": "[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)",
   };
+  // pick out the badge to match the chosen license
   const licenceBadge = function () {
     for (let openLicence in licenceBadges) {
       if (openLicence == data.licence) {
@@ -51,6 +53,7 @@ function generateMarkdown(data) {
   - [Operate](#${linkOperate})\n
   - [Licence](#${linkLicence})\n
   - [Contributions](#${linkContribution})\n`;
+  // create variables for final output
   const line2 = `## Description: ${data.description}\n`;
   const line3 = `## Github Username: ${data.github}\n`;
   const line4 = `### Email Address: ${data.email}\n`;
@@ -59,6 +62,7 @@ function generateMarkdown(data) {
   const line8 = `### How to use: ${data.operate}\n`;
   const line9 = `### Licence: ${data.licence}\n`;
   const line10 = `### Notable contributions: ${data.contribution}\n`;
+  // assemble final markdown to return
   const func = line1 + licenceBadge() + "\n" + toc + line2 + line3 + line4 + line6 + line7 + line8 + line9 + line10;
   return func;
 }
