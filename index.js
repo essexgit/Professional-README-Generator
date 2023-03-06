@@ -63,6 +63,11 @@ const questions = [
         name: "contribution",
         message: "Who else has contributed and what did they do?"
     },
+    {
+        type: "input",
+        name: "questions",
+        message: "Send any questions to author"
+    },
 ];
 
 // function to write README file
@@ -70,7 +75,7 @@ function writeToFile(fileName = "ReadMe.md", text) {
     fs.writeFile(fileName, text, (err) =>
         err ? console.log(err) : console.log('Success!')
     );
-}
+};
 
 // function to initialize program
 function init() {

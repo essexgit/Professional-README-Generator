@@ -9,6 +9,8 @@ function generateMarkdown(data) {
   const linkOperate = data.operate.replaceAll(" ", "%20");
   const linkLicence = data.licence.replaceAll(" ", "%20");
   const linkContribution = data.contribution.replaceAll(" ", "%20");
+  const linkTest = data.testCmd.replaceAll(" ", "%20");
+  const linkQuestions = data.questions.replaceAll(" ", "%20");
   // object containing license options as keys and linked badges as values
   const licenceBadges = {
     "Creative Commons Attribution 4.0": "[![License: CC BY 4.0](https://img.shields.io/badge/License-CC-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)",
@@ -48,22 +50,26 @@ function generateMarkdown(data) {
   [Description](#${linkDescription})\n
   [Contact](#${linkGit})\n
   ## How to:\n
-  - [Install](#${linkInstall})\n
+  - [Installation ](#${linkInstall})\n
   - [Run](#${linkRunCmd})\n
-  - [Operate](#${linkOperate})\n
+  - [Usage](#${linkOperate})\n
   - [Licence](#${linkLicence})\n
-  - [Contributions](#${linkContribution})\n`;
+  - [Contributions](#${linkContribution})\n
+  - [Tests](#${linkTest}) \n
+  - [Questions](#${linkQuestions})\n`;
   // create variables for final output
   const line2 = `## Description: ${data.description}\n`;
   const line3 = `## Github Username: ${data.github}\n`;
   const line4 = `### Email Address: ${data.email}\n`;
-  const line6 = `### How to install: ${data.installCmd}\n`;
+  const line6 = `### Installation: ${data.installCmd}\n`;
   const line7 = `### How to start: ${data.runCmd}\n`;
-  const line8 = `### How to use: ${data.operate}\n`;
-  const line9 = `### Licence: ${data.licence}\n`;
-  const line10 = `### Notable contributions: ${data.contribution}\n`;
+  const line8 = `### Usage: ${data.operate}\n`;
+  const line9 = `### Tests: ${data.testCmd}\n`;
+  const line10 = `### Licence: ${data.licence}\n`;
+  const line11 = `### Contributing: ${data.contribution}\n`;
+  const line12 = `### Questions: ${data.questions}\n`;
   // assemble final markdown to return
-  const func = line1 + licenceBadge() + "\n" + toc + line2 + line3 + line4 + line6 + line7 + line8 + line9 + line10;
+  const func = line1 + licenceBadge() + "\n" + toc + line2 + line3 + line4 + line6 + line7 + line8 + line9 + line10 + line11 + line12;
   return func;
 }
 
